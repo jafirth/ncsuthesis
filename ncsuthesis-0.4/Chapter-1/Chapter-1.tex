@@ -79,18 +79,18 @@ $\mbox{I}\{\mu_i(1,\beta)>\mu_i(0,\beta)\}$ , if so just use the
 You could use a multiline equation for long equations.  The environment
 is \texttt{multline}.  Insert \verb^\\^ for line breaks.
 \begin{multline*}
-  \bo \cdot \vec{\nabla} \psi(\vec{r},\bo,E)
-   + \Sigma_t(\vec{r},E)\psi(\vec{r},\bo,E) = \\
-  \int_{4\pi} d\bo' \int_0^{\infty} dE' \, 
-  \Sigma_s(\vec{r},\bo'\to\bo,E'\to E)\psi(\vec{r},\bo',E')
-  + Q(\vec{r},\bo,E),
+  \cdot \vec{\nabla} \psi(\vec{r},E)
+   + \Sigma_t(\vec{r},E)\psi(\vec{r},E) = \\
+  \int_{4\pi} d \int_0^{\infty} dE' \, 
+  \Sigma_s(\vec{r},\to,E'\to E)\psi(\vec{r},E')
+  + Q(\vec{r},E),
 \end{multline*}
 we operate with $\displaystyle\int_{0}^{\infty}\left(\,\cdot\,\right) dE$
 to obtain
 \begin{multline*}
-  \bo \cdot \vec{\nabla} \tilde{\psi}(\vec{r},\bo)
-  + \Sigma_t(\vec{r})\tilde{\psi}(\vec{r},\bo) = \\
-  \int_{4\pi} d\bo' \int_0^{\infty} dE' \, \psi(\vec{r},\bo',E')
-  \left [ \int_{0}^{\infty} dE \, \Sigma_s(\vec{r},\bo'\to\bo,E'\to E)
-  \right ] + \tilde{Q}(\vec{r},\bo),
+  \cdot \vec{\nabla} \tilde{\psi}(\vec{r})
+  + \Sigma_t(\vec{r})\tilde{\psi}(\vec{r}) = \\
+  \int_{4\pi} d \int_0^{\infty} dE' \, \psi(\vec{r},E')
+  \left [ \int_{0}^{\infty} dE \, \Sigma_s(\vec{r}\to,E'\to E)
+  \right ] + \tilde{Q}(\vec{r}),
 \end{multline*}
