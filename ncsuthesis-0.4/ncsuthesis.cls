@@ -439,6 +439,28 @@
        \ncsu@committeesignatures
       \end{center}
      \clearpage
+		
+		
+		\begin{center}
+		\begin{minipage}[b]{0.4\textwidth} \centering
+					\vspace{5em}
+					\rule{\textwidth}{.4pt} 
+			asdt
+		\end{minipage}
+		\hspace{0.1\textwidth}
+		\begin{minipage}[b]{0.4\textwidth} \centering
+			\rule{\textwidth}{.4pt}
+			asdt
+		\end{minipage}
+		\begin{minipage}[b]{0.4\textwidth} \centering
+			\vspace{5em}
+			\rule{\textwidth}{.4pt}
+			asdt
+		\end{minipage}
+		
+\end{center}
+		\clearpage
+		
      \ncsu@defaultspacing
 }
 
