@@ -209,7 +209,7 @@
 
    \ncsu@defaultspacing
     % make (hidden) page numbers for the pre-frontmatter alphabetic
-    % \frontmatter will reset this to roman numeerals (i)
+    % I will set this to roman numerals (i) in \maketitlepage
     % \mainmatter will reset this to arabic numerals (1)
    \pagenumbering{alph}
    \thispagestyle{empty} % no page numbers here
@@ -419,6 +419,7 @@
 
 \newcommand{\maketitlepage}{
      \clearpage
+     \pagenumbering{roman}
      \thispagestyle{empty}
      \singlespacing
       \begin{center}
