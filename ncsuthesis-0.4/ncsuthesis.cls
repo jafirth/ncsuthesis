@@ -55,7 +55,46 @@
 \RequirePackage{graphicx}
 \RequirePackage[nottoc]{tocbibind} % includes lof, lot, refs in toc
 \RequirePackage{calc}
+
+%%----------------------------------------------------------------------------%%
+%%---------------------------- Left Align Document ----------------------------%%
+%% -------------------------------------------------------------------------- %%
+%% We will use the package ragged2e to left-align the entire document.
+%% However, ragged2e gives a warning witht the [document] option.
+%% The lines below will eliminate that warning.
+\show\@arrayparboxrestore
+\CheckCommand*{\@arrayparboxrestore}{%
+\let \if@nobreak \iffalse
+\let \if@noskipsec \iffalse
+\let \par \@@par
+\let \-\@dischyph
+\let \'\@acci \let \`\@accii
+\let \=\@acciii \parindent \z@ \parskip \z@skip \everypar {}\linewidth \hsize
+\@totalleftmargin \z@
+\leftskip \z@skip \rightskip \z@skip \@rightskip \z@skip
+\parfillskip \@flushglue
+\lineskip \normallineskip
+\lineskiplimit \normallineskiplimit
+\baselineskip \normalbaselineskip
+\sloppy }%
+\def\@arrayparboxrestore{%
+\let\if@nobreak\iffalse
+\let\if@noskipsec\iffalse
+\let\par\@@par
+\let\-\@dischyph
+\let\'\@acci\let\`\@accii\let\=\@acciii
+\parindent\z@ \parskip\z@skip
+\everypar {}\linewidth\hsize
+\@totalleftmargin\z@
+\leftskip\z@skip \rightskip\z@skip \@rightskip\z@skip
+\parfillskip\@flushglue \lineskip\normallineskip
+\baselineskip\normalbaselineskip
+\sloppy
+}%
+%% Now we can call ragged2e without a warning
 \RequirePackage[document]{ragged2e} % left-aligns the entire document
+%%  finally we keep the existing \parindent (otherwise ragged2e package will set to 0)
+\setlength{\RaggedRightParindent}{\parindent}
 
 %%----------------------------------------------------------------------------%%
 %%---------------------------- Formatting Options ----------------------------%%
@@ -187,8 +226,6 @@
           \par\nobreak%
           \vspace{\ncsu@afterschapbeforeleadingsep}}%
     }
-
-\setlength{\RaggedRightParindent}{\parindent}
 }
 
 %% -------------------------------------------------------------------------- %%
